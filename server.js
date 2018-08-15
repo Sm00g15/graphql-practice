@@ -4,6 +4,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config({ path: "variables.env" });
 const Project = require("./models/Projects");
 const User = require("./models/User");
@@ -29,6 +30,11 @@ mongoose
   .then(() => console.log("DB connected"))
   .catch(err => console.error(err));
 const app = express();
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true
+};
+app.use(cors(corsOptions));
 
 /////////////////////////////////////////////////
 // CONNECT SCHEMAS WITH GRAPHQL

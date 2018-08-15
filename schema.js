@@ -17,7 +17,13 @@ type Query {
     getAllProjects: [Project]
 }
 
+type Token {
+    token: String!
+}
+
 type Mutation {
     addProject(name: String!, category: String!, description: String!): Project
+
+    signupUser(username: String!, email: String!, password: String!): Token
 }
 `;
