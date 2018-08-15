@@ -23,7 +23,6 @@ type Token {
 
 type Mutation {
     addProject(name: String!, category: String!, description: String!): Project
-
     signupUser(username: String!, email: String!, password: String!): Token
 }
 `;
