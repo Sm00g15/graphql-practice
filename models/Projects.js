@@ -13,10 +13,6 @@ const ProjectSchema = new Schema({
   description: {
     type: String,
     required: true
-  },
-  likes: {
-    type: Number,
-    default: 0
   }
 });
 
