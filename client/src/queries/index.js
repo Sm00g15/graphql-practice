@@ -14,11 +14,11 @@ export const GET_ALL_PROJECTS = gql`
 
 /* PROFILE MUTATIONS */
 export const SIGNUP_USER = gql`
-mutation($username: String!, $email: String!, $password: String!){
-  signupUser(username:) {
-    token
+  mutation($username: String!, $email: String!, $password: String!) {
+    signupUser(username: $username, email: $email, password: $password) {
+      token
+    }
   }
-}
 `;
 
 /* USER QUERIES */
