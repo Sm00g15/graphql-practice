@@ -11,6 +11,15 @@ exports.resolvers = {
     getAllProjects: async (root, args, { Project }) => {
       const allProjects = await Project.find();
       return allProjects;
+    },
+    getCurrentUser: async (root, args, { currentUser, User }) => {
+      if (!currentUser) {
+        return null;
+      }
+      const user = await User.findOne({
+        username: currentUser.username
+      }).populate({ path: "projects", model: "Project" });
+      return user;
     }
   },
 

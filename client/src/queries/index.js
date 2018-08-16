@@ -30,5 +30,14 @@ export const SIGNUP_USER = gql`
 `;
 
 /* USER QUERIES */
+export const GET_CURRENT_USER = gql`
+  query {
+    getCurrentUser {
+      username
+      _id
+      email
+    }
+  }
+`;
 
 /* USER MUTATIONS */

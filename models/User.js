@@ -14,6 +14,10 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true
+  },
+  projects: {
+    type: [Schema.Types.ObjectId],
+    ref: "Project"
   }
 });
 

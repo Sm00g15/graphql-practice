@@ -11,10 +11,12 @@ type User {
     username: String!
     password: String!
     email:  String!
+    projects: [Project]
 }
 
 type Query {
     getAllProjects: [Project]
+    getCurrentUser: User
 }
 
 type Token {
