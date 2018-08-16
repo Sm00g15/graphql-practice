@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => (
+const Navbar = ({ session }) => (
   <nav>
-    <NavbarAuth />
+    {session && session.getCurrentUser ? <NavbarAuth /> : <NavbarUnAuth />}
   </nav>
 );
 
@@ -16,7 +16,7 @@ const NavbarAuth = () => (
       <NavLink to="/search">Search</NavLink>
     </li>
     <li>
-      <NavLink to="/projects/add">Add Project</NavLink>
+      <NavLink to="/project/add">Add Project</NavLink>
     </li>
   </ul>
 );
