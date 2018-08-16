@@ -26,8 +26,9 @@ class Signup extends Component {
     event.preventDefault();
     signupUser().then(data => {
       console.log(data);
+      localStorage.getItem("token", data.signupUser.token);
+      this.clearState();
     });
-    this.clearState();
   };
 
   validateForm = () => {
