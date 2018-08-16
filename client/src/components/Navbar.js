@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ session }) => (
@@ -8,36 +8,41 @@ const Navbar = ({ session }) => (
 );
 
 const NavbarAuth = () => (
-  <ul>
-    <li>
-      <NavLink to="/">Home</NavLink>
-    </li>
-    <li>
-      <NavLink to="/search">Search</NavLink>
-    </li>
-    <li>
-      <NavLink to="/project/add">Add Project</NavLink>
-    </li>
-  </ul>
+  <Fragment>
+    <ul>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/search">Search</NavLink>
+      </li>
+      <li>
+        <NavLink to="/project/add">Add Project</NavLink>
+      </li>
+    </ul>
+    <h5>You can add custom reminders for yourself (todolist etc)</h5>
+  </Fragment>
 );
 
 const NavbarUnAuth = () => (
-  <ul>
-    <li>
-      <NavLink to="/" exact>
-        Projects
-      </NavLink>
-    </li>
-    <li>
-      <NavLink to="/about">About</NavLink>
-    </li>
-    <li>
-      <NavLink to="/search">Search</NavLink>
-    </li>
-    <li>
-      <NavLink to="/contact">Contact</NavLink>
-    </li>
-  </ul>
+  <Fragment>
+    <ul>
+      <li>
+        <NavLink to="/" exact>
+          Projects
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/about">About</NavLink>
+      </li>
+      <li>
+        <NavLink to="/search">Search</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact</NavLink>
+      </li>
+    </ul>
+  </Fragment>
 );
 
 export default Navbar;
