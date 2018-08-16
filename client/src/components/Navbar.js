@@ -1,10 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => (
   <nav>
-    <NavbarUnAuth />
+    <NavbarAuth />
   </nav>
+);
+
+const NavbarAuth = () => (
+  <ul>
+    <li>
+      <NavLink to="/">Home</NavLink>
+    </li>
+    <li>
+      <NavLink to="/search">Search</NavLink>
+    </li>
+    <li>
+      <NavLink to="/projects/add">Add Project</NavLink>
+    </li>
+  </ul>
 );
 
 const NavbarUnAuth = () => (
@@ -18,10 +32,10 @@ const NavbarUnAuth = () => (
       <NavLink to="/about">About</NavLink>
     </li>
     <li>
-      <NavLink to="/contact">Contact</NavLink>
+      <NavLink to="/search">Search</NavLink>
     </li>
     <li>
-      <NavLink to="/search">Search</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
     </li>
   </ul>
 );

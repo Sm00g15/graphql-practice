@@ -43,7 +43,7 @@ exports.resolvers = {
         throw new Error("Invalid Password");
       }
       return {
-        token: createToken(user, process.env.SECRET, "1hr")
+        token: createToken(user, process.env.SECRET, "100000 days")
       };
     },
 
